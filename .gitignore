@@ -225,3 +225,7 @@ bh_unicode_properties.cache
 GitHub.sublime-settings
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,sublimetext,git,python,jupyternotebooks
+
+
+# Unnecessary files that I somehow like to keep
+garbage.py
