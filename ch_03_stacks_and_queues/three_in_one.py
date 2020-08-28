@@ -14,9 +14,8 @@ class Stack:
 		self.start = 0
 		self.top = 0
 
-		def is_empty(self):
-			return self.top == self.start
-
+	def is_empty(self):
+		return self.top == self.start
 
 
 class ThreeInOne:

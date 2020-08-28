@@ -60,6 +60,11 @@ class SetOfStacks:
 			self.stacks[-1] = self.top
 			self.node_count -= 1
 
+
+	# TO-DO: Define pop at
+	def pop_at(self):
+		pass
+
 def pretty_print(stacks):
 
 	print("****START-SET-OF-STACKS****")
@@ -67,7 +72,11 @@ def pretty_print(stacks):
 	for s in stacks:
 		print("---START-STACK---")
 		while s:
-			print(s.data, )
+			print("   -----")
+			print("   |   |")
+			print("   | " + str(s.data) + " |")
+			print("   |   |")
+			print("   -----")
 			s = s.next
 		print("---END-STACK---")
 	
