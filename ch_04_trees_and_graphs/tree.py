@@ -64,21 +64,31 @@ Complete binary tree:
 * A complete binary tree is a binary tree in which every level of the tree is fully filled, 
 except for perhaps the last level. 
 * To the extent that the last level is filled, it is filled left to right. 
+
+Notes:
+* Very neat solution for checking if the binary tree is complete
+* Keep the index and node count while traversing the tree (giving priority to the left child).
+* If the index ever exceeds the node count then three is incomplete.
+
 """
+def index_and_node_number_check(node, index, no_nodes):
+
+	if node == None:
+		return True
+
+	if index >= no_nodes:
+		return False
+
+	return index_and_node_number_check(node.left, 2*index+1, no_nodes) and \
+			index_and_node_number_check(node.right, 2*index+2, no_nodes)
+
+
 def is_complete_binary_tree(node):
 
-	d = depth(node)
-	n = node_count(node)
-	
-	if (n == 2**d):
-		return True 
-	elif (n == 2**d - 2):
-		while(node):
-			d -= 1
-			node = node.right
-		return d != 0
-	else:
-		return False
+	no_nodes = node_count(node)
+
+	return index_and_node_number_check(node, 0, no_nodes)
+
 
 """
 Full binary tree:
@@ -131,6 +141,14 @@ Pre-Order Traversal:
 
 * Pre-order traversal visits the current node before its child nodes (hence the name "pre-order").
 * In a pre-order traversal, the root is always the first node visited. 
+
+Notes:
+* If we store the nodes visited by pre-order traversal in an array, for a k-th element 
+	of the array:
+	- Left child is located at 2*k index
+	- Right child is located at 2*k+1 index
+	- Parent is located at k/2 index
+	
 """
 def pre_order_traversal(node):
 
@@ -175,6 +193,10 @@ if __name__ == '__main__':
 	print("Is full binary tree: ", is_full_binary_tree(root))
 	print("Depth of tree: ", depth(root))
 	print("# of nodes in tree: ", node_count(root))
+
+	root.right.left = None
+	print("# of nodes in tree: ", node_count(root))
+	print("Is complete binary tree: ", is_complete_binary_tree(root))
 
 	print("In-order traversal: ")
 	in_order_traversal(root)
