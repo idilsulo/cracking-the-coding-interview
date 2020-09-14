@@ -8,8 +8,15 @@ Rotate Matrix:
 """
 
 """
-Numpy to rule them all! 
-Vectorization is the fastest solution.
+Is vectorization really the fastest solution?
+
+Below are the details of the same LeetCode problem with a numpy answer:
+* Runtime: 96 ms, faster than 6.51% of Python3 online submissions for Rotate Image.
+* Memory Usage: 29 MB, less than 5.09% of Python3 online submissions for Rotate Image.
+* Accepted: 437,988 / Submissions: 767,760
+
+Note: Sometimes these metrics such as runtime (in ms) and memory usage in (MB) are not 
+so reliable on LeetCode as they change even if you submit the same solution twice. 
 """
 import numpy as np
 
