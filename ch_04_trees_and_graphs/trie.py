@@ -1,5 +1,6 @@
 """
-A trie is a variant of an n-ary tree in which characters are stored at each node. Each path down the tree may represent a word. 
+A trie (also known as Prefix Trees) is a variant of an n-ary tree in which 
+	characters are stored at each node. Each path down the tree may represent a word. 
 """
 
 """
@@ -14,6 +15,7 @@ Notes:
 ALPHABET_SIZE = 27  # Alphabet size containing the end of string character
 BASE = 65 			# Base used for ordinal and character conversion
 SPECIAL_CHAR = '['  # Special character for the root
+
 
 """
 Time Complexity and Comparison to Hash Table:
@@ -56,12 +58,12 @@ def insert(node, s):
 			node.count += 1
 		node = node.children[i]
 
+# Helper function for delete operation
+# Recover from invalid delete requests
 def fix_invalid(node, seq):
 	for c in seq:
 		node.count += 1
 		node = node.children[ord(c) - BASE]
-		
-
 
 def delete(root, s):
 	parent = None
@@ -115,7 +117,6 @@ if __name__ == '__main__':
 	print("Printing trie...")
 	pretty_print(trie)
 
-	# delete(trie, 'LIFE')
 	delete(trie, 'LIVABLEE')
 
 	insert(trie, 'MORE')
