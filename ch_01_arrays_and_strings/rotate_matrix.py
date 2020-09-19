@@ -8,6 +8,7 @@ Rotate Matrix:
 """
 
 """
+
 Is vectorization really the fastest solution?
 
 Below are the details of the same LeetCode problem with a numpy answer:
@@ -17,6 +18,7 @@ Below are the details of the same LeetCode problem with a numpy answer:
 
 Note: Sometimes these metrics such as runtime (in ms) and memory usage in (MB) are not 
 so reliable on LeetCode as they change even if you submit the same solution twice. 
+
 """
 import numpy as np
 
