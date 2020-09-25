@@ -47,15 +47,23 @@ Binary search tree:
 * This must be true for each node n.
 """
 def is_binary_search_tree(node):
-
 	if (not node.right) and (not node.left):
 		return True
 	elif (not node.right):
-		return node.left.data <= node.data
+		if node.left.data > node.data:
+			return False
+		else:
+			return is_binary_search_tree(node.left)
 	elif (not node.left):
-		return node.right.data > node.data
-	
-	return is_binary_search_tree(node.left) and is_binary_search_tree(node.right)
+		if node.right.data <= node.data:
+			return False
+		else:
+			return is_binary_search_tree(node.right)
+	else:
+		if (node.right.data <= node.data) or (node.left.data > node.data):
+			return False
+		else:
+			return is_binary_search_tree(node.left) and is_binary_search_tree(node.right)
 
 
 """

@@ -58,7 +58,7 @@ class Queue:
 		return x
 
 
-def breadth_first_search(node, depth):
+def print_tree(node, depth):
 	q = Queue()
 	node.visited = True
 	print(node.data)
@@ -90,4 +90,4 @@ def breadth_first_search(node, depth):
 
 if __name__ == '__main__':
 
-	breadth_first_search(minimal_tree([1,2,3,4,5,6,7,8,9,10,11]), 4)
+	print_tree(minimal_tree([1,2,3,4,5,6,7,8,9,10,11]), 4)

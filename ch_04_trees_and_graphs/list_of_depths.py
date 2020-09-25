@@ -60,7 +60,6 @@ class Queue:
 """
 Notes:
 * Use breadth-first search to construct the linked-list at each depth
-* Can also use TreeNode instead of ListNode to reduce space complexity
 """
 def list_of_depths(root : TreeNode) -> List[ListNode]:
 	
